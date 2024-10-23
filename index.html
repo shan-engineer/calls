@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        .phone-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .phone-list li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Call Numbers</h1>
+    <ul class="phone-list" id="phoneList"></ul>
+
+    <script>
+        const phoneNumbers = [
+            "9990645850",
+            "8287555045",
+            "8510999369",
+            "8802323756",
+            "8882169250",
+            "8882710710",
+            "9312019877",
+            "9654911711",
+            "9717245262",
+            "9811050538",
+            "9811462356",
+            "9868437779",
+            "9999473622"
+        ];
+
+        const phoneList = document.getElementById("phoneList");
+
+        phoneNumbers.forEach((number, index) => {
+            const listItem = document.createElement("li");
+            const anchor = document.createElement("a");
+            anchor.href = `tel:${number}`; // Create a link to call
+            anchor.textContent = `${index + 1}. ${number}`; // Set serial number and the phone number
+            listItem.appendChild(anchor); // Append anchor to list item
+            phoneList.appendChild(listItem); // Append list item to the phone list
+        });
+    </script>
+</body>
+</html>
